@@ -32,7 +32,10 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/service/Card.js", "src/service/Board.js", "src/service/Deck.js"
+    "tests/**/*.tsx",
+    "src/service/Card.js",
+    "src/service/Board.js",
+    "src/service/Deck.js"
   ],
   "exclude": [
     "node_modules"

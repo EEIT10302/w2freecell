@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: '/freecell',
-    outputDir: 'dist',
-    assetsPublicPath: './'
+    //publicPath: process.env.NODE_ENV === 'production' ? '/w2freecell/' : '/',
+    publicPath: '/w2freecell',
+    outputDir: 'dist'
 }
