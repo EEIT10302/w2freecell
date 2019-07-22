@@ -40,19 +40,23 @@ export default class HelloWorld extends Vue {
   deck: Deck = new Deck();
   board: Board = new Board();
   score: number = 0;
-  // @Emit('score') send(score: number){console.log('emit: '+score)};
+  @Emit("getScore")
+  send(score: number) {
+    console.log('score: ' + score);
+    this.score = score;
+  }
+  
   private mounted(): void {
     this.board.render();
     this.getScore(this);
   }
 
-  private getScore(_this: Vue){
+  private getScore(_this) {
     setInterval(() => {
-      console.log('calling send function');
-     // _this.send(_this.board.score);
+      console.log("calling send function");
+      _this.send(_this.board.score);
     }, 1000);
   }
-
 }
 </script>
 
@@ -90,7 +94,7 @@ export default class HelloWorld extends Vue {
   // background: url("../assets/cards.png") 10%;
   width: 116px;
   position: absolute;
-  canvas{
+  canvas {
     box-shadow: 4px 3px 5px rgba(234, 210, 210, 0.77);
   }
 }

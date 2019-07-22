@@ -1,8 +1,7 @@
 <template>
   <div>
-    <HelloWorld/>
-    <Footer/>
-    <!-- <Footer :score="scoreEmit"/> -->
+    <HelloWorld @getScore="getScore"/>
+    <Footer :score="score"/>
   </div>
 </template>
 
@@ -19,12 +18,9 @@ import Footer from '@/components/Footer.vue'; // @ is an alias to /src
 })
 export default class Home extends Vue {
   score: number = 0;
-  propScore(score:number){
+  getScore(score: number){
     this.score = score;
+    console.log('output score:' + score);
   }
-  // scoreEmit(val: number){
-  //   console.log('child Emit score value: '+val);
-  //   this.score = val;
-  // }
 }
 </script>

@@ -5,8 +5,7 @@
       Time: {{countDown}}
     </div>
     <div class="col-xl-2 col-lg-3 col-md-3">
-      <font-awesome-icon icon="chess-queen" />
-      score: {{score}}
+      <font-awesome-icon icon="chess-queen" />score: {{score}}
     </div>
   </div>
 </template>
@@ -16,10 +15,11 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class Footer extends Vue {
   @Prop({
-    type: Number,
-    required: false,
-    default: 0
-  }) score!: number;
+    type: Number, // 父组件传递给子组件的数据类型
+    required: false, // 是否必填
+    default: 0 // 默认值， 如果传入的是 Object，则要 default: ()=>({}) 参数为函数
+  })
+  score!: number;
   private m: number = 0;
   private mt: string = "00";
   private s: number = 0;
