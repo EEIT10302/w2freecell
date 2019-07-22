@@ -1,7 +1,8 @@
 <template>
   <div>
     <HelloWorld/>
-    <Footer :score="scoreEmit"/>
+    <Footer/>
+    <!-- <Footer :score="scoreEmit"/> -->
   </div>
 </template>
 
@@ -21,9 +22,9 @@ export default class Home extends Vue {
   propScore(score:number){
     this.score = score;
   }
-  scoreEmit(val: number){
-    console.log('child Emit score value: '+val);
-    this.score = val;
-  }
+  // scoreEmit(val: number){
+  //   console.log('child Emit score value: '+val);
+  //   this.score = val;
+  // }
 }
 </script>

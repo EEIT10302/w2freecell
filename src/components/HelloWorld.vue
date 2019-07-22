@@ -40,16 +40,16 @@ export default class HelloWorld extends Vue {
   deck: Deck = new Deck();
   board: Board = new Board();
   score: number = 0;
-  @Emit('score') send(score: number){console.log('emit: '+score)};
+  // @Emit('score') send(score: number){console.log('emit: '+score)};
   private mounted(): void {
     this.board.render();
     this.getScore(this);
   }
 
-  private getScore(_this){
+  private getScore(_this: Vue){
     setInterval(() => {
       console.log('calling send function');
-      _this.send(_this.board.score);
+     // _this.send(_this.board.score);
     }, 1000);
   }
 
