@@ -1,4 +1,5 @@
 module.exports = {
     publicPath: '/freecell',
-    outputDir: 'docs'
+    outputDir: 'dist',
+    assetsPublicPath: './'
 }
